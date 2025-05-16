@@ -1,0 +1,8 @@
+[package]
+name = "wupf"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wut = { path = "../wut", version = "*" }
+wups = { path = "../wups", version = "*" }
