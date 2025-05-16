@@ -5,7 +5,8 @@ version = "0.1.0"
 edition = "2021"
 license-file = "LICENSE"
 repository = "https://github.com/rust-wiiu/wupf"
+publish = false
 
 [dependencies]
-wut = { path = "../wut", version = "*" }
-wups = { path = "../wups", version = "*" }
+wut = { path = "../wut", version = "0.2.0" }
+wups = { path = "../wups", version = "0.2.0" }
