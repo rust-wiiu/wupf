@@ -205,7 +205,7 @@ checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 [[package]]
 name = "math"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wut#1895a62aa6d83977dfad3a79a796d49e16371d70"
+source = "git+https://github.com/rust-wiiu/wut?branch=main#1895a62aa6d83977dfad3a79a796d49e16371d70"
 dependencies = [
  "bindgen",
 ]
@@ -336,7 +336,7 @@ dependencies = [
 [[package]]
 name = "sys"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wut#1895a62aa6d83977dfad3a79a796d49e16371d70"
+source = "git+https://github.com/rust-wiiu/wut?branch=main#1895a62aa6d83977dfad3a79a796d49e16371d70"
 dependencies = [
  "bindgen",
 ]
@@ -559,7 +559,7 @@ dependencies = [
 [[package]]
 name = "wups"
 version = "0.2.0"
-source = "git+https://github.com/rust-wiiu/wups#1a7163ba72a2f82dfc00f4f5a2c199a78d4c7376"
+source = "git+https://github.com/rust-wiiu/wups?branch=main#8771eb20c6273e957a049d6c7351bcac2b7ba55c"
 dependencies = [
  "bindgen",
  "flagset",
@@ -571,7 +571,7 @@ dependencies = [
 [[package]]
 name = "wups-macros"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wups#1a7163ba72a2f82dfc00f4f5a2c199a78d4c7376"
+source = "git+https://github.com/rust-wiiu/wups?branch=main#8771eb20c6273e957a049d6c7351bcac2b7ba55c"
 dependencies = [
  "chrono",
  "proc-macro2",
@@ -582,7 +582,7 @@ dependencies = [
 [[package]]
 name = "wut"
 version = "0.2.0"
-source = "git+https://github.com/rust-wiiu/wut#1895a62aa6d83977dfad3a79a796d49e16371d70"
+source = "git+https://github.com/rust-wiiu/wut?branch=main#1895a62aa6d83977dfad3a79a796d49e16371d70"
 dependencies = [
  "flagset",
  "math",
@@ -594,7 +594,7 @@ dependencies = [
 [[package]]
 name = "wut-macros"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wut#1895a62aa6d83977dfad3a79a796d49e16371d70"
+source = "git+https://github.com/rust-wiiu/wut?branch=main#1895a62aa6d83977dfad3a79a796d49e16371d70"
 dependencies = [
  "proc-macro2",
  "quote",
