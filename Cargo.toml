@@ -8,5 +8,5 @@ repository = "https://github.com/rust-wiiu/wupf"
 publish = false
 
 [dependencies]
-wut = { path = "https://github.com/rust-wiiu/wut" }
-wups = { path = "https://github.com/rust-wiiu/wups" }
+wut = { git = "https://github.com/rust-wiiu/wut" }
+wups = { git = "https://github.com/rust-wiiu/wups" }
