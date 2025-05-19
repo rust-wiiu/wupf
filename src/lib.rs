@@ -166,8 +166,8 @@ pub trait OnInput: Plugin {
     ///
     /// # Returns
     ///
-    /// Return `Some(...)` to overwrite the controller input for the system.
-    fn on_input(&mut self, port: gamepad::Port, state: gamepad::State) -> Option<gamepad::State>;
+    /// Used to overwrite the controller input for the system.
+    fn on_input(&mut self, port: gamepad::Port, state: gamepad::State) -> gamepad::State;
 
     /// FFI callback for [on_input][OnInput::on_input]
     ///
@@ -183,18 +183,11 @@ pub trait OnInput: Plugin {
             return;
         }
 
-        let result = {
-            let handler = Self::handler().get();
-            let mut app = handler.lock().unwrap();
+        let handler = Self::handler().get();
+        let mut app = handler.lock().unwrap();
 
-            app.on_input(gamepad::Port::DRC, unsafe {
-                gamepad::State::from(*buffers)
-            })
-        };
-        if let Some(value) = result {
-            unsafe {
-                *buffers &= value;
-            }
+        unsafe {
+            *buffers &= app.on_input(gamepad::Port::DRC, gamepad::State::from(*buffers));
         }
     }
 
@@ -212,18 +205,11 @@ pub trait OnInput: Plugin {
             return;
         }
 
-        let result = {
-            let handler = Self::handler().get();
-            let mut app = handler.lock().unwrap();
+        let handler = Self::handler().get();
+        let mut app = handler.lock().unwrap();
 
-            app.on_input(gamepad::Port::from_wpad(chan), unsafe {
-                gamepad::State::from(*data)
-            })
-        };
-        if let Some(value) = result {
-            unsafe {
-                *data &= value;
-            }
+        unsafe {
+            *data &= app.on_input(gamepad::Port::from_wpad(chan), gamepad::State::from(*data));
         }
     }
 }
