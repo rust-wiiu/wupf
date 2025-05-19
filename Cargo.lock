@@ -558,8 +558,8 @@ dependencies = [
 
 [[package]]
 name = "wups"
-version = "0.3.1"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.3.1#248a4e47ee0d7601f70de995049e023895a52e3f"
+version = "0.3.2"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.3.2#caae59f0fb9761c6769df77b79f655ecb3736083"
 dependencies = [
  "bindgen",
  "flagset",
@@ -571,7 +571,7 @@ dependencies = [
 [[package]]
 name = "wups-macros"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.3.1#248a4e47ee0d7601f70de995049e023895a52e3f"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.3.2#caae59f0fb9761c6769df77b79f655ecb3736083"
 dependencies = [
  "chrono",
  "proc-macro2",
