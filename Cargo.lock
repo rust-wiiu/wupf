@@ -559,7 +559,7 @@ checksum = "271414315aff87387382ec3d271b52d7ae78726f5d44ac98b4f4030c91880486"
 
 [[package]]
 name = "wupf"
-version = "0.3.3"
+version = "0.3.4"
 dependencies = [
  "macros",
  "wups",
