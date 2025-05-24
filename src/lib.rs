@@ -44,11 +44,12 @@
 
 #![no_std]
 
-use wut;
+#[cfg(feature = "derive")]
+pub use macros::PluginHandler;
 
-use wut::gamepad::GamepadError;
 use wut::{
-    gamepad,
+    self,
+    gamepad::{self, GamepadError},
     sync::{Mutex, OnceLock},
 };
 
