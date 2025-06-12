@@ -45,7 +45,7 @@
 #![no_std]
 
 #[cfg(feature = "derive")]
-pub use macros::PluginHandler;
+pub use wupf_macros::PluginHandler;
 
 use wut::{
     self,
