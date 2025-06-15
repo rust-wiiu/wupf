@@ -558,8 +558,8 @@ dependencies = [
 
 [[package]]
 name = "wups"
-version = "0.4.0"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.0#c7e2e4c38d343bc7632d11fa0a4496864ad7cca7"
+version = "0.4.1"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.1#77307debf0d4b989fcd821944de1155a79f907d4"
 dependencies = [
  "wups-core",
  "wups-macros",
@@ -569,7 +569,7 @@ dependencies = [
 [[package]]
 name = "wups-core"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.0#c7e2e4c38d343bc7632d11fa0a4496864ad7cca7"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.1#77307debf0d4b989fcd821944de1155a79f907d4"
 dependencies = [
  "flagset",
  "thiserror",
@@ -580,7 +580,7 @@ dependencies = [
 [[package]]
 name = "wups-macros"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.0#c7e2e4c38d343bc7632d11fa0a4496864ad7cca7"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.1#77307debf0d4b989fcd821944de1155a79f907d4"
 dependencies = [
  "chrono",
  "proc-macro2",
@@ -591,7 +591,7 @@ dependencies = [
 [[package]]
 name = "wups-sys"
 version = "0.1.0"
-source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.0#c7e2e4c38d343bc7632d11fa0a4496864ad7cca7"
+source = "git+https://github.com/rust-wiiu/wups?tag=v0.4.1#77307debf0d4b989fcd821944de1155a79f907d4"
 dependencies = [
  "bindgen",
 ]

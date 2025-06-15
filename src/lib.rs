@@ -174,10 +174,10 @@ pub trait OnInput: Plugin {
     ///
     /// **Do not overwrite** this method unless you need to and know what you are doing!
     extern "C" fn ffi_on_vpad(
-        _chan: wut::bindings::VPADChan::Type,
-        buffers: *mut wut::bindings::VPADStatus,
+        _chan: wut::sys::VPADChan::Type,
+        buffers: *mut wut::sys::VPADStatus,
         _count: u32,
-        error: *mut wut::bindings::VPADReadError::Type,
+        error: *mut wut::sys::VPADReadError::Type,
     ) /*-> i32*/
     {
         if GamepadError::try_from(unsafe { *error }).is_err() {
@@ -196,10 +196,10 @@ pub trait OnInput: Plugin {
     ///
     /// **Do not overwrite** this method unless you need to and know what you are doing!
     extern "C" fn ffi_on_kpad(
-        chan: wut::bindings::WPADChan::Type,
-        data: *mut wut::bindings::KPADStatus,
+        chan: wut::sys::WPADChan::Type,
+        data: *mut wut::sys::KPADStatus,
         _size: u32,
-        error: *mut wut::bindings::KPADError::Type,
+        error: *mut wut::sys::KPADError::Type,
     ) /* -> i32 */
     {
         if GamepadError::try_from(unsafe { *error }).is_err() {
@@ -232,10 +232,10 @@ pub trait OnUpdate: Plugin {
 #[macro_export]
 macro_rules! hook_plugin {
     ($plugin:ident) => {
-        ::wups::wups_hook_ex!("INIT_PLUGIN", $plugin::ffi_on_init);
-        ::wups::wups_hook_ex!("DEINIT_PLUGIN", $plugin::ffi_on_deinit);
-        ::wups::wups_hook_ex!("APPLICATION_STARTS", $plugin::ffi_on_start);
-        ::wups::wups_hook_ex!("APPLICATION_REQUESTS_EXIT", $plugin::ffi_on_exit);
+        ::wups::macros::wups_hook_ex!("INIT_PLUGIN", $plugin::ffi_on_init);
+        ::wups::macros::wups_hook_ex!("DEINIT_PLUGIN", $plugin::ffi_on_deinit);
+        ::wups::macros::wups_hook_ex!("APPLICATION_STARTS", $plugin::ffi_on_start);
+        ::wups::macros::wups_hook_ex!("APPLICATION_REQUESTS_EXIT", $plugin::ffi_on_exit);
     };
 }
 
@@ -244,10 +244,10 @@ macro_rules! hook_on_input {
     ($plugin:ident) => {
         #[::wups::function_hook(module = VPAD, function = VPADRead)]
         fn plugin_VPADRead(
-            chan: ::wut::bindings::VPADChan::Type,
-            buffers: *mut ::wut::bindings::VPADStatus,
+            chan: ::wut::sys::VPADChan::Type,
+            buffers: *mut ::wut::sys::VPADStatus,
             count: u32,
-            error: *mut ::wut::bindings::VPADReadError::Type,
+            error: *mut ::wut::sys::VPADReadError::Type,
         ) -> i32 {
             let status = unsafe { hooked(chan, buffers, count, error) };
 
@@ -258,10 +258,10 @@ macro_rules! hook_on_input {
 
         #[::wups::function_hook(module = PADSCORE, function = KPADReadEx)]
         fn plugin_KPADReadEx(
-            chan: ::wut::bindings::WPADChan::Type,
-            data: *mut ::wut::bindings::KPADStatus,
+            chan: ::wut::sys::WPADChan::Type,
+            data: *mut ::wut::sys::KPADStatus,
             size: u32,
-            error: *mut ::wut::bindings::KPADError::Type,
+            error: *mut ::wut::sys::KPADError::Type,
         ) -> i32 {
             let status = unsafe { hooked(chan, data, size, error) };
 
